@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/zombie_enemy.gd" id="1_j61vr"]
+[ext_resource type="PackedScene" path="res://Models/enemies/zombie/zombie.glb" id="2_5jspp"]
+[ext_resource type="PackedScene" path="res://Models/enemies/zombie/zombie_idle.glb" id="3_x1k82"]
+[ext_resource type="PackedScene" path="res://Models/enemies/zombie/zombie_run.glb" id="4_rn2pw"]
+[ext_resource type="PackedScene" path="res://Models/enemies/zombie/zombie_jump.glb" id="5_01gqg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2g8wl"]
+radius = 0.45
+height = 1.5
+
+[node name="ZombieEnemy" type="CharacterBody3D"]
+script = ExtResource("1_j61vr")
+
+[node name="BodyVisual" type="Node3D" parent="."]
+
+[node name="BaseModel" parent="BodyVisual" instance=ExtResource("2_5jspp")]
+
+[node name="AnimationSources" type="Node3D" parent="."]
+visible = false
+
+[node name="IdleSource" parent="AnimationSources" instance=ExtResource("3_x1k82")]
+
+[node name="RunSource" parent="AnimationSources" instance=ExtResource("4_rn2pw")]
+
+[node name="JumpSource" parent="AnimationSources" instance=ExtResource("5_01gqg")]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_2g8wl")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://wtxqhmmdwagl"]
+
+[ext_resource type="PackedScene" uid="uid://dm8jgef1jidhr" path="res://Models/building/pillar.glb" id="1_iiqsp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_affyb"]
+points = PackedVector3Array(-0.75001204, 0, -0.2763312, -0.2763433, 0, -0.74999994, -0.75001204, 0, 0.2761845, -0.75001204, 3.9996085, -0.2763312, 0.2761724, 0, -0.74999994, -0.2763433, 4, -0.74999994, -0.2763433, 0, 0.75000006, -0.75001204, 3.9996085, 0.2761845, 0.74998796, 0, -0.2763312, 0.2761724, 4, -0.74999994, -0.2763433, 4, 0.75000006, 0.2761724, 0, 0.75000006, 0.74998796, 0, 0.2761845, 0.74998796, 3.9996085, -0.2763312, 0.2761724, 4, 0.75000006, 0.74998796, 3.9996085, 0.2761845)
+
+[node name="pillar" type="StaticBody3D" unique_id=763102601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=271794460]
+shape = SubResource("ConvexPolygonShape3D_affyb")
+
+[node name="pillar2" parent="." unique_id=74573032 instance=ExtResource("1_iiqsp")]

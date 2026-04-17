@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dja12h4xahwar"]
+
+[ext_resource type="PackedScene" uid="uid://4d2gv33a7uuv" path="res://Models/building/wall.glb" id="1_d155t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yjehn"]
+points = PackedVector3Array(2, 4, 0.5, 2, 0, 0.5, 2, 4, -0.5, -2, 4, 0.5, 2, 0, -0.5, -2, 0, 0.5, -2, 4, -0.5, -2, 0, -0.5)
+
+[node name="wall" type="StaticBody3D" unique_id=224012341]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1261439611]
+shape = SubResource("ConvexPolygonShape3D_yjehn")
+
+[node name="wall2" parent="." unique_id=426878550 instance=ExtResource("1_d155t")]

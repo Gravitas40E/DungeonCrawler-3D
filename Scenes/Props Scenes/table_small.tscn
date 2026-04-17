@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://blbl6312sbhjp"]
+
+[ext_resource type="PackedScene" uid="uid://dsy23uc7yjg6y" path="res://Models/props/table_small.glb" id="1_vupuk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ufpg0"]
+points = PackedVector3Array(0.4741224, 1, 0.47474068, 0.4741224, 0.97494125, 0.49970156, 0.49908322, 0.97494125, 0.47474068, 0.4741224, 1, -0.47523972, -0.47585818, 1, 0.47474068, 0.4741224, 0.7999217, 0.49979943, -0.47585818, 0.97494125, 0.49970156, 0.49908322, 0.97494125, -0.47523972, 0.44916153, 0, 0.4372505, 0.4741224, 0.97494125, -0.50020057, -0.47585818, 1, -0.47523972, -0.500819, 0.97494125, 0.47474068, 0.2741419, 0.7999217, 0.49970156, -0.43836796, 0, 0.44977987, 0.43663216, 0, 0.44977987, -0.47585818, 0.7999217, 0.4913813, 0.44916153, 0, -0.4377495, 0.4741224, 0.7999217, -0.4918803, -0.22585815, 0.7999217, -0.50020057, -0.47585818, 0.97494125, -0.50020057, -0.500819, 0.97494125, -0.47523972, -0.45089734, 0, 0.4372505, 0.43663216, 0, -0.45027888, -0.47585818, 0.7999217, -0.50020057, -0.45089734, 0, -0.4377495, -0.43836796, 0, -0.45027888)
+
+[node name="table_small" type="StaticBody3D" unique_id=273782137]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=477493525]
+shape = SubResource("ConvexPolygonShape3D_ufpg0")
+
+[node name="table_small2" parent="." unique_id=1352405020 instance=ExtResource("1_vupuk")]
+
+[editable path="table_small2"]

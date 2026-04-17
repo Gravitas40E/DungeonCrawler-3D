@@ -1,0 +1,109 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/player_hud.gd" id="1_2o6v8"]
+[ext_resource type="Texture2D" path="res://Assets/UI/PixelHUD/UI_Indicator_Heart.png" id="2_tjcx6"]
+[ext_resource type="Texture2D" path="res://Assets/UI/PixelHUD/UI_StatusBar_Bg.png" id="3_ylvo4"]
+[ext_resource type="Texture2D" path="res://Assets/UI/PixelHUD/UI_StatusBar_Fill_HP.png" id="4_m8vg1"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/UncialAntiqua-Regular.ttf" id="5_ka3xg"]
+[ext_resource type="Texture2D" path="res://Assets/UI/PixelHUD/UI_StatusBar_Fill_Magicka.png" id="6_f4dwn"]
+[ext_resource type="Texture2D" path="res://Assets/UI/PixelHUD/UI_Indicator_Orb_Magicka.png" id="7_5e11g"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_2o6v8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 520.0
+offset_bottom = 170.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+theme_override_constants/separation = 8
+
+[node name="HealthRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+theme_override_constants/separation = 10
+
+[node name="HealthIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HealthRow"]
+custom_minimum_size = Vector2(54, 50)
+texture = ExtResource("2_tjcx6")
+stretch_mode = 5
+
+[node name="BarStack" type="Control" parent="MarginContainer/VBoxContainer/HealthRow"]
+custom_minimum_size = Vector2(395, 57)
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/HealthRow/BarStack"]
+custom_minimum_size = Vector2(395, 57)
+offset_right = 395.0
+offset_bottom = 57.0
+max_value = 100.0
+value = 100.0
+texture_under = ExtResource("3_ylvo4")
+texture_progress = ExtResource("4_m8vg1")
+nine_patch_stretch = true
+stretch_margin_left = 38
+stretch_margin_top = 9
+stretch_margin_right = 38
+stretch_margin_bottom = 9
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/VBoxContainer/HealthRow/BarStack"]
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 102.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_ka3xg")
+theme_override_font_sizes/font_size = 18
+text = "Health"
+
+[node name="HealthValue" type="Label" parent="MarginContainer/VBoxContainer/HealthRow/BarStack"]
+offset_left = 288.0
+offset_top = 17.0
+offset_right = 374.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_ka3xg")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+text = "100 / 100"
+
+[node name="MagickaRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+theme_override_constants/separation = 10
+
+[node name="MagickaIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/MagickaRow"]
+custom_minimum_size = Vector2(54, 50)
+texture = ExtResource("7_5e11g")
+stretch_mode = 5
+
+[node name="BarStack" type="Control" parent="MarginContainer/VBoxContainer/MagickaRow"]
+custom_minimum_size = Vector2(395, 57)
+
+[node name="MagickaBar" type="TextureProgressBar" parent="MarginContainer/VBoxContainer/MagickaRow/BarStack"]
+custom_minimum_size = Vector2(395, 57)
+offset_right = 395.0
+offset_bottom = 57.0
+max_value = 100.0
+value = 100.0
+texture_under = ExtResource("3_ylvo4")
+texture_progress = ExtResource("6_f4dwn")
+nine_patch_stretch = true
+stretch_margin_left = 38
+stretch_margin_top = 9
+stretch_margin_right = 38
+stretch_margin_bottom = 9
+
+[node name="MagickaLabel" type="Label" parent="MarginContainer/VBoxContainer/MagickaRow/BarStack"]
+offset_left = 26.0
+offset_top = 7.0
+offset_right = 118.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("5_ka3xg")
+theme_override_font_sizes/font_size = 18
+text = "Magicka"
+
+[node name="MagickaValue" type="Label" parent="MarginContainer/VBoxContainer/MagickaRow/BarStack"]
+offset_left = 288.0
+offset_top = 17.0
+offset_right = 374.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_ka3xg")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 2
+text = "100 / 100"

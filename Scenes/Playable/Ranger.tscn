@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/playable_adventurer.gd" id="1_5t8r6"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Ranger.glb" id="2_v9ejl"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_General.glb" id="3_hnb2g"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementBasic.glb" id="4_yy3ss"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatMelee.glb" id="5_hh5df"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatRanged.glb" id="6_w1f6d"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementAdvanced.glb" id="7_3qb32"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Special.glb" id="8_f14rw"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Tools.glb" id="9_ndu5d"]
+
+[node name="Ranger" type="Node3D"]
+script = ExtResource("1_5t8r6")
+item_scene_path = "res://Scenes/Props Scenes/torch_mounted.tscn"
+item_bone_name = &"hand.r"
+idle_source_name = "RangedSource"
+idle_animation = &"Ranged_Bow_Idle"
+sprint_source_name = "AdvancedSource"
+sprint_animation = &"Running_HoldingBow"
+primary_action_source_name = "RangedSource"
+primary_action_animation = &"Ranged_Bow_Release"
+secondary_action_source_name = "RangedSource"
+secondary_action_animation = &"Ranged_Bow_Draw"
+cast_action_source_name = "RangedSource"
+cast_action_animation = &"Ranged_Bow_Release_Up"
+
+[node name="BaseModel" parent="." instance=ExtResource("2_v9ejl")]
+
+[node name="AnimationSources" type="Node3D" parent="."]
+visible = false
+
+[node name="GeneralSource" parent="AnimationSources" instance=ExtResource("3_hnb2g")]
+
+[node name="MovementSource" parent="AnimationSources" instance=ExtResource("4_yy3ss")]
+
+[node name="MeleeSource" parent="AnimationSources" instance=ExtResource("5_hh5df")]
+
+[node name="RangedSource" parent="AnimationSources" instance=ExtResource("6_w1f6d")]
+
+[node name="AdvancedSource" parent="AnimationSources" instance=ExtResource("7_3qb32")]
+
+[node name="SpecialSource" parent="AnimationSources" instance=ExtResource("8_f14rw")]
+
+[node name="ToolsSource" parent="AnimationSources" instance=ExtResource("9_ndu5d")]

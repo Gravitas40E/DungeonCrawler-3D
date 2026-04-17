@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://byfodwv6up0ni"]
+
+[ext_resource type="PackedScene" uid="uid://dp8uyk08eh0jh" path="res://Models/building/wall_cracked.glb" id="1_tkxna"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h0w1e"]
+points = PackedVector3Array(2, 4, 0.49988496, 1.5947533, 0.293657, 0.6245172, 1.6327329, 0.3081441, 0.6186, 1.7963979, 0.412686, 0.5893835, 2, 0, 0.49988496, 2, 4, -0.5000082, -2, 4, 0.49988496, -1.4009397, 0.3723571, 0.6296948, 1.5947533, 0.2685983, 0.61428535, -1.5861394, 0.30931872, 0.61749053, -2, 0, 0.49988496, 2, 0, -0.5000082, 1.6264682, 0.30383712, -0.6142853, 1.585748, 0.30931872, -0.61761373, 1.4005482, 0.3723571, -0.6296948, -2, 4, -0.5000082, -1.6268598, 0.30383712, 0.6141621, -2, 0, -0.5000082, -1.5951449, 0.2685983, -0.61440855, -1.5951449, 0.293657, -0.6246405, -1.6331245, 0.3081441, -0.6187232, -1.7967894, 0.412686, -0.5895068)
+
+[node name="wall_cracked" type="StaticBody3D" unique_id=668302628]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=977294355]
+shape = SubResource("ConvexPolygonShape3D_h0w1e")
+
+[node name="wall_cracked2" parent="." unique_id=671985568 instance=ExtResource("1_tkxna")]

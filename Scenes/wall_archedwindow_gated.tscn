@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://brjx7fcduvub8"]
+
+[ext_resource type="PackedScene" uid="uid://bgdvig44xboa1" path="res://Models/building/wall_archedwindow_gated.glb" id="1_2cxon"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wswij"]
+points = PackedVector3Array(2, 4, 0.49999997, 2, 0, 0.49999997, 2, 4, -0.49999997, -2, 4, 0.49999997, 2, 0, -0.49999997, -2, 0, 0.49999997, -2, 4, -0.49999997, -2, 0, -0.49999997)
+
+[node name="wall_archedwindow_gated" type="StaticBody3D" unique_id=480071336]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1001442679]
+shape = SubResource("ConvexPolygonShape3D_wswij")
+
+[node name="wall_archedwindow_gated2" parent="." unique_id=1940755385 instance=ExtResource("1_2cxon")]

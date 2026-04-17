@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/playable_adventurer.gd" id="1_5t8r6"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Barbarian.glb" id="2_f4r2a"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_General.glb" id="3_hnb2g"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementBasic.glb" id="4_yy3ss"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatMelee.glb" id="5_3n10u"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatRanged.glb" id="6_5l4px"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementAdvanced.glb" id="7_h8asu"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Special.glb" id="8_kuijt"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Tools.glb" id="9_8gs7n"]
+
+[node name="Barbarian" type="Node3D"]
+script = ExtResource("1_5t8r6")
+item_scene_path = "res://Scenes/Props Scenes/sword_shield.tscn"
+item_bone_name = &"hand.r"
+idle_source_name = "MeleeSource"
+idle_animation = &"Melee_2H_Idle"
+primary_action_source_name = "MeleeSource"
+primary_action_animation = &"Melee_2H_Attack_Spinning"
+secondary_action_source_name = "MeleeSource"
+secondary_action_animation = &"Melee_2H_Attack_Chop"
+cast_action_source_name = "MeleeSource"
+cast_action_animation = &"Melee_Block_Attack"
+
+[node name="BaseModel" parent="." instance=ExtResource("2_f4r2a")]
+
+[node name="AnimationSources" type="Node3D" parent="."]
+visible = false
+
+[node name="GeneralSource" parent="AnimationSources" instance=ExtResource("3_hnb2g")]
+
+[node name="MovementSource" parent="AnimationSources" instance=ExtResource("4_yy3ss")]
+
+[node name="MeleeSource" parent="AnimationSources" instance=ExtResource("5_3n10u")]
+
+[node name="RangedSource" parent="AnimationSources" instance=ExtResource("6_5l4px")]
+
+[node name="AdvancedSource" parent="AnimationSources" instance=ExtResource("7_h8asu")]
+
+[node name="SpecialSource" parent="AnimationSources" instance=ExtResource("8_kuijt")]
+
+[node name="ToolsSource" parent="AnimationSources" instance=ExtResource("9_8gs7n")]

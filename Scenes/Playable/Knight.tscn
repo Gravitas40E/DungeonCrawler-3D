@@ -1,0 +1,41 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/playable_adventurer.gd" id="1_5t8r6"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Knight.glb" id="2_66m3m"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_General.glb" id="3_hnb2g"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementBasic.glb" id="4_yy3ss"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatMelee.glb" id="5_4dwe2"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_CombatRanged.glb" id="6_g3t0c"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_MovementAdvanced.glb" id="7_a8ne2"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Special.glb" id="8_y3rp0"]
+[ext_resource type="PackedScene" path="res://Models/adventurers/Rig_Medium_Tools.glb" id="9_nklv2"]
+
+[node name="Knight" type="Node3D"]
+script = ExtResource("1_5t8r6")
+item_scene_path = "res://Scenes/Props Scenes/sword_shield.tscn"
+item_bone_name = &"hand.r"
+primary_action_source_name = "MeleeSource"
+primary_action_animation = &"Melee_1H_Attack_Stab"
+secondary_action_source_name = "MeleeSource"
+secondary_action_animation = &"Melee_Block"
+cast_action_source_name = "MeleeSource"
+cast_action_animation = &"Melee_Block_Attack"
+
+[node name="BaseModel" parent="." instance=ExtResource("2_66m3m")]
+
+[node name="AnimationSources" type="Node3D" parent="."]
+visible = false
+
+[node name="GeneralSource" parent="AnimationSources" instance=ExtResource("3_hnb2g")]
+
+[node name="MovementSource" parent="AnimationSources" instance=ExtResource("4_yy3ss")]
+
+[node name="MeleeSource" parent="AnimationSources" instance=ExtResource("5_4dwe2")]
+
+[node name="RangedSource" parent="AnimationSources" instance=ExtResource("6_g3t0c")]
+
+[node name="AdvancedSource" parent="AnimationSources" instance=ExtResource("7_a8ne2")]
+
+[node name="SpecialSource" parent="AnimationSources" instance=ExtResource("8_y3rp0")]
+
+[node name="ToolsSource" parent="AnimationSources" instance=ExtResource("9_nklv2")]

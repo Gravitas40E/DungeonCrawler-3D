@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
+
+[ext_resource type="Script" uid="uid://ba044c6cvd5gl" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" path="res://Scripts/player_combat.gd" id="2_jf4s9"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxk12"]
+radius = 0.75
+height = 2.15
+
+[node name="ProtoController" type="CharacterBody3D" unique_id=294675411]
+script = ExtResource("1_ucva2")
+
+[node name="BodyVisual" type="Node3D" parent="." unique_id=141240010]
+
+[node name="ModelMount" type="Node3D" parent="BodyVisual" unique_id=180240010]
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=882884971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="PlayerCombat" type="Area3D" parent="." unique_id=198733112]
+script = ExtResource("2_jf4s9")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCombat" unique_id=198733113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0, 0)
+shape = SubResource("CapsuleShape3D_gxk12")
+
+[node name="CameraYawPivot" type="Node3D" parent="." unique_id=1900944077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="CameraPitchPivot" type="Node3D" parent="CameraYawPivot" unique_id=420170101]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraYawPivot/CameraPitchPivot" unique_id=718221001]
+spring_length = 4.5
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="CameraYawPivot/CameraPitchPivot/SpringArm3D" unique_id=1321892903]

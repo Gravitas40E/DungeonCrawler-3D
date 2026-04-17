@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/character_select_ui.gd" id="1_7xdi0"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/UncialAntiqua-Regular.ttf" id="2_74v3d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3g0n"]
+bg_color = Color(0.05490196, 0.039215688, 0.047058824, 0.92)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.59607846, 0.44313726, 0.2784314, 0.9)
+
+[node name="CharacterSelectUI" type="CanvasLayer"]
+script = ExtResource("1_7xdi0")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.52)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3g0n")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(476, 0)
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+theme_override_fonts/font = ExtResource("2_74v3d")
+theme_override_font_sizes/font_size = 25
+text = "Choose Your Adventurer"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+theme_override_fonts/font = ExtResource("2_74v3d")
+theme_override_font_sizes/font_size = 13
+text = "Temporary names for now. Pick the one you want to play."
+horizontal_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+theme_override_constants/separation = 10
